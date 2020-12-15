@@ -1,0 +1,29 @@
+Name,Score
+    Joe Besser,70
+    Curly Joe DeRita,0
+    Larry Fine,80
+    Curly Howard,65
+    Moe Howard,100
+    Shemp Howard,85
+
+I had a problem opening the text file in Python. I watched a lot of videos about how to fix it, and I was not able to.
+Thats why I decided to write a similar code for a similar problem: 
+   
+     def processScores():
+    # Allow user to enter scores
+    scores = [] # empty list
+    while (len(scores) < 3): # input 3 scores
+        newScore = input(''Enter a valid score\n'')
+        if newScore.isdigit() and int(newScore) >= 0:
+            newScore = int(newScore) # cast to integer
+            scores.append(newScore) # add to list
+        else:
+            print(''Invalid input. Please try again.'')
+            continue
+        # calculate average
+        if (len(scores) == 3):
+            totalScores = 0 # initialize
+            for i in scores: # get each element's value in scores list
+                totalScores = totalScores + i # sum up the elements
+            calcAverage(totalScores, len(scores))
+    return scores # return list
